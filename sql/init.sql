@@ -3,8 +3,7 @@ create schema public;
 
 create table Course
 (
-    id   serial primary key,
-    year int not null check ( year > 0 )
+    year int not null primary key check ( year > 0 )
 );
 
 create table Student
@@ -14,7 +13,7 @@ create table Student
     course int references Course
 );
 
-create table Lesson
+create table Class
 (
     id          serial primary key,
     name        text not null,
@@ -27,7 +26,7 @@ create table MarkFormulaUnit
     id          serial primary key,
     name        text  not null,
     coefficient float not null,
-    lesson      int references Lesson
+    lesson      int references Class
 );
 
 create table Unit
@@ -49,6 +48,6 @@ create table Mark
 create table LessonVisiting
 (
     student int references Student,
-    lesson  int references Lesson,
+    lesson  int references Class,
     primary key (student, lesson)
 );
