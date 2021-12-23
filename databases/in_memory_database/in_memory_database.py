@@ -1,9 +1,9 @@
 from typing import Dict
 
-from database.database_interface import *
+from databases.database_interface import *
 
-from database.in_memory_database.entities.course import Course
-from database.in_memory_database.entities.clazz import Class
+from databases.in_memory_database.entities.course import Course
+from databases.in_memory_database.entities.clazz import Class
 
 
 class InMemoryDatabase(DatabaseInterface):
