@@ -37,28 +37,31 @@ class InMemoryDatabase(DatabaseInterface):
         self.class_editing[class_id] = [request.class_owner]
 
     def add_students_to_class(self, class_id: int, users_id: List[int]):
-        if len(self.classes) <= class_id:
-            raise Exception("class with specified id does not exist")
+        self.__check_class_existence(class_id)
         clazz = self.classes[class_id]
         clazz.add_students(users_id)
 
     def add_helper_to_course(self, user_id: int, class_id: int):
-        if len(self.classes) <= class_id:
-            raise Exception("class with specified id does not exist")
+        self.__check_class_existence(class_id)
         self.class_editing[class_id].append(user_id)
 
     def add_mark_formula_unit(self, request: MarkFormulaUnitCreationRequest):
-        if len(self.classes) <= request.class_id:
-            raise Exception("class with specified id does not exist")
+        self.__check_class_existence(request.class_id)
         clazz = self.classes[request.class_id]
         clazz.add_mark_formula_unit(request)
 
     def add_unit_to_class(self, request: UnitCreationRequest):
-        if len(self.classes) <= request.class_id:
-            raise Exception("class with specified id does not exist")
+        self.__check_class_existence(request.class_id)
         clazz = self.classes[request.class_id]
-        unit = clazz.get_mark_formula_unit(request.mark_formula_unit_id)
-        unit.add_unit(request)
+        clazz.add_unit(request)
 
     def add_mark(self, request: MarkCreationRequest):
-        raise NotImplemented()
+        self.__check_class_existence(request.class_id)
+        clazz = self.classes[request.class_id]
+        clazz.add_mark(request)
+
+    # helper functions
+    def __check_class_existence(self, class_id: int):
+        if len(self.classes) <= class_id:
+            raise Exception("class with specified id does not exist")
+
