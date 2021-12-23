@@ -9,6 +9,8 @@ from requests.mark_creation import MarkCreationRequest
 class Unit:
 
     def __init__(self, request: UnitCreationRequest):
+        self.name: str = request.name
+        self.coefficient: float = request.coefficient
         self.marks: Dict[int, int] = dict()
 
     def add_mark(self, request: MarkCreationRequest):
@@ -20,6 +22,8 @@ class Unit:
 class MarkFormulaUnit:
 
     def __init__(self, request: MarkFormulaUnitCreationRequest):
+        self.name: str = request.name
+        self.coefficient: float = request.coefficient
         self.units: List[Unit] = list()
 
     def add_unit(self, request: UnitCreationRequest):
@@ -35,6 +39,8 @@ class MarkFormulaUnit:
 class Class:
 
     def __init__(self, request: ClassCreationRequest):
+        self.name: str = request.name
+        self.description: str = request.description
         self.students: List[int] = list()
         self.mark_formula_units: List[MarkFormulaUnit] = list()
 

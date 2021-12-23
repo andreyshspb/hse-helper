@@ -2,9 +2,9 @@ from typing import List
 
 
 class Course:
-    def __init__(self, year):
-        self.year = year
-        self.students = list()
+    def __init__(self, year: int):
+        self.year: int = year
+        self.students: List[int] = list()
 
     def __contains__(self, item):
         return item in self.students
