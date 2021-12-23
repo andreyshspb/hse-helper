@@ -1,0 +1,2 @@
+class UserRegistrationRequest:
+    name: str
