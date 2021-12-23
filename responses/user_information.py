@@ -1,0 +1,2 @@
+class UserInformationResponse:
+    name: str
