@@ -1,9 +1,9 @@
 from typing import Dict
 
-from repositories.database_interface import *
+from repositories.business.repository_interface import *
 
-from repositories.in_memory_database.entities.course import Course
-from repositories.in_memory_database.entities.clazz import Class
+from repositories.business.in_memory.entities.course import Course
+from repositories.business.in_memory.entities.clazz import Class
 
 
 class InMemoryDatabase(DatabaseInterface):
@@ -64,4 +64,3 @@ class InMemoryDatabase(DatabaseInterface):
     def __check_class_existence(self, class_id: int):
         if len(self.classes) <= class_id:
             raise Exception("class with specified id does not exist")
-

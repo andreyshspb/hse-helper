@@ -1,4 +1,4 @@
-from repositories.database_interface import DatabaseInterface
+from repositories.business.repository_interface import DatabaseInterface
 
 
 def get_database() -> DatabaseInterface:
