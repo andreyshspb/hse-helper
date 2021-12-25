@@ -1,9 +1,9 @@
 from typing import Dict, List
 
-from requests.class_creation import ClassCreationRequest
-from requests.mark_formula_unit_creation import MarkFormulaUnitCreationRequest
-from requests.unit_creation import UnitCreationRequest
-from requests.mark_creation import MarkCreationRequest
+from requests.business.class_creation import ClassCreationRequest
+from requests.business.mark_formula_unit_creation import MarkFormulaUnitCreationRequest
+from requests.business.unit_creation import UnitCreationRequest
+from requests.business.mark_creation import MarkCreationRequest
 
 
 class Unit:

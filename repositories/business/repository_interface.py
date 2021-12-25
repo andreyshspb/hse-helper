@@ -1,11 +1,10 @@
 from requests.business.course_creation import CourseCreationRequest
 from requests.business.add_students_to_course import AddStudentsToCourseRequest
 from requests.business.add_students_to_class import AddStudentsToClassRequest
-
-from requests.class_creation import ClassCreationRequest
-from requests.mark_formula_unit_creation import MarkFormulaUnitCreationRequest
-from requests.unit_creation import UnitCreationRequest
-from requests.mark_creation import MarkCreationRequest
+from requests.business.class_creation import ClassCreationRequest
+from requests.business.mark_formula_unit_creation import MarkFormulaUnitCreationRequest
+from requests.business.unit_creation import UnitCreationRequest
+from requests.business.mark_creation import MarkCreationRequest
 
 
 class BusinessRepositoryInterface:
