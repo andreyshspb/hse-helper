@@ -1,4 +1,4 @@
-from requests.user_registration import UserRegistrationRequest
+from requests.registration.user_registration import UserRegistrationRequest
 from responses.user_information import UserInformationResponse
 
 
