@@ -9,11 +9,11 @@ class PermissionsService:
         self.registration_repository = registration_repository
 
     # permissions actions
-    def is_admin(self, request: IsAdminRequest) -> bool:
-        return self.permissions_repository.is_admin(request.user_id)
+    def is_admin(self, user_id: int) -> bool:
+        return self.permissions_repository.is_admin(user_id)
 
-    def is_lecturer(self, request: IsLecturerRequest) -> bool:
-        return self.permissions_repository.is_lecturer(request.user_id)
+    def is_lecturer(self, user_id: int) -> bool:
+        return self.permissions_repository.is_lecturer(user_id)
 
     # add permissions
     def add_admin(self, request: AddAdminRequest):
