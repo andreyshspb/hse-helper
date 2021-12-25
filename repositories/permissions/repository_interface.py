@@ -12,4 +12,4 @@ class PermissionsRepositoryInterface:
         raise NotImplemented()
 
     def add_lecturer(self, user_id: int):
-        raise NotImplemented
+        raise NotImplemented()
