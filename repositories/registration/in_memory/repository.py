@@ -14,3 +14,6 @@ class RegistrationInMemoryRepository:
         if len(self.users) <= user_id:
             raise Exception("the user with the specified id does not exist")
         return self.users[user_id].to_user_information_response()
+
+    def user_exists(self, user_id: int) -> bool:
+        return 0 <= user_id < len(self.users)

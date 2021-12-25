@@ -9,3 +9,6 @@ class RegistrationRepositoryInterface:
 
     def get_user(self, user_id: int) -> UserInformationResponse:
         raise NotImplemented()
+
+    def user_exists(self, user_id: int) -> bool:
+        raise NotImplemented()

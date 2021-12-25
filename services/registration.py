@@ -10,3 +10,6 @@ class RegistrationService:
 
     def get_user(self, user_id: int) -> UserInformationResponse:
         return self.registration_repository.get_user(user_id)
+
+    def user_exists(self, user_id: int) -> bool:
+        return self.registration_repository.user_exists(user_id)
